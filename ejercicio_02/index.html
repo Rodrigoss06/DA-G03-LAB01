@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario de registro con validación</title>
+    <meta
+      name="description"
+      content="Formulario de registro con validación en JavaScript. Asegúrate de que los datos de los usuarios sean correctos antes de enviarlos."
+    />
+    <meta
+      name="keywords"
+      content="formulario, registro, validación, JavaScript, HTML, CSS"
+    />
+    <meta name="author" content="Rodrigo Santamarina" />
+    <link rel="stylesheet" href="styless.css" />
+  </head>
+  <body>
+    <div id="selectForm" class="select-form">
+      <span id="selectRegisterForm">register</span>
+      <span id="selectLoginForm">login</span>
+    </div>
+    <div id="formContainer" class="form-container">
+      <form id="registerForm" action="" class="register-form">
+        <input
+          type="text"
+          required
+          minlength="6"
+          maxlength="50"
+          pattern="[a-zA-Z\s]+"
+          placeholder="userName"
+          autocomplete="nickname"
+        />
+        <span class="error-message" id="userNameError"></span>
+
+        <input
+          type="email"
+          required
+          minlength="10"
+          maxlength="50"
+          placeholder="email"
+          autocomplete="email"
+        />
+        <span class="error-message" id="emailError"></span>
+
+        <input
+          type="password"
+          required
+          minlength="8"
+          maxlength="20"
+          pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+          placeholder="password"
+          autocomplete="new-password"
+        />
+        <span class="error-message" id="passwordError"></span>
+
+        <input type="submit" value="register" class="form-button" />
+      </form>
+      <form id="loginForm" action="" class="hidden">
+        <input
+          type="email"
+          required
+          minlength="10"
+          maxlength="50"
+          placeholder="email"
+          autocomplete="email"
+        />
+        <span class="error-message" id="emailError"></span>
+
+        <input
+          type="password"
+          required
+          minlength="8"
+          maxlength="20"
+          pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+          placeholder="password"
+          autocomplete="current-password"
+        />
+        <span class="error-message" id="passwordError"></span>
+
+        <input type="submit" value="login" class="form-button" />
+      </form>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
